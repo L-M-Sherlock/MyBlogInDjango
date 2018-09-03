@@ -689,6 +689,7 @@ img {
     font-size: 16px;
     line-height: 100%;
     transition: 0.4s border-color linear;
+    background: #f6f6f6;
 }
 
 .contact-form textarea, .comment-form textarea {
@@ -700,6 +701,7 @@ img {
     line-height: 20px !important;
     min-height: 183px;
     transition: 0.4s border-color linear;
+    background: #f6f6f6;
 }
 
 .contact-form input:focus, .comment-form input:focus,
@@ -878,6 +880,7 @@ img {
 }
 
 .comment-item .text {
+    background-color: #ddd
     padding-top: 5px;
     font-size: 16px;
 }
