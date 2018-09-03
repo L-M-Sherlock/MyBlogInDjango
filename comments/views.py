@@ -23,12 +23,7 @@ def post_comment(request, post_pk):
             # 检查到数据是合法的，调用表单的 save 方法保存数据到数据库，
             # commit=False 的作用是仅仅利用表单的数据生成 Comment 模型类的实例，但还不保存评论数据到数据库。
             comment = form.save(commit=False)
-            comment.text = markdown.markdown(comment.text,
-                            extensions=[
-                                'markdown.extensions.extra',
-                                'markdown.extensions.codehilite',
-                                'markdown.extensions.toc',
-                            ])
+
 
             # 将评论和被评论的文章关联起来。
             comment.post = post
