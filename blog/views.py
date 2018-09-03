@@ -199,13 +199,13 @@ def detail(request, pk):
     form = CommentForm()
     # 获取这篇 post 下的全部评论
     comment_list = post.comment_set.all()
-	for comment in comment_list:
-		comment.text = markdown.markdown(comment.text,
-							extensions=[
-								'markdown.extensions.extra',
-								'markdown.extensions.codehilite',
-								'markdown.extensions.toc',
-							])
+    for comment in comment_list:
+        comment.text = markdown.markdown(comment.text,
+                            extensions=[
+                                'markdown.extensions.extra',
+                                'markdown.extensions.codehilite',
+                                'markdown.extensions.toc',
+                            ])
 
     # 将文章、表单、以及文章下的评论列表作为模板变量传给 detail.html 模板，以便渲染相应数据。
     context = {'post': post,

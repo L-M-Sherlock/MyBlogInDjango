@@ -13,12 +13,12 @@ class Comment(models.Model):
     email = models.EmailField(max_length=255)
     url = models.URLField(blank=True)
     text = models.TextField()
-	text = markdown.markdown(text,
-							extensions=[
-								'markdown.extensions.extra',
-								'markdown.extensions.codehilite',
-								'markdown.extensions.toc',
-							])
+    text = markdown.markdown(text,
+                            extensions=[
+                                'markdown.extensions.extra',
+                                'markdown.extensions.codehilite',
+                                'markdown.extensions.toc',
+                            ])
     created_time = models.DateTimeField(auto_now_add=True)
 
     post = models.ForeignKey('blog.Post')
