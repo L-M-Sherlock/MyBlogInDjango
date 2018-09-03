@@ -50,9 +50,6 @@ a {
     border-bottom: 1px #ccc solid;
 }
 
-c {
-    color: #030303;
-}
 
 a:hover, a:focus {
     text-decoration: none;
@@ -276,6 +273,7 @@ img {
     letter-spacing: 1px;
     font-weight: 400;
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    border-bottom: 0px;
 }
 
 .cl-effect-14 a::before,
@@ -341,7 +339,7 @@ img {
  */
 
 .widget {
-    background: #f5f5f5;
+    background: #ffffff;
     padding: 30px 0 0;
 }
 
