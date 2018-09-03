@@ -1,1 +1,1 @@
-# django-blog-test
+# My blog based on django
