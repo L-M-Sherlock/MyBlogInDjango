@@ -1,3 +1,5 @@
+from lxml.html.clean import clean_html
+
 import markdown
 
 from markdown.extensions.toc import TocExtension
@@ -200,12 +202,12 @@ def detail(request, pk):
     # 获取这篇 post 下的全部评论
     comment_list = post.comment_set.all()
     for comment in comment_list:
-        comment.text = markdown.markdown(comment.text,
+        comment.text = clean_html(markdown.markdown(comment.text,
                                         extensions=[
                                             'markdown.extensions.extra',
                                             'markdown.extensions.codehilite',
                                             'markdown.extensions.toc',
-                        ])
+                        ]))
     # 将文章、表单、以及文章下的评论列表作为模板变量传给 detail.html 模板，以便渲染相应数据。
     context = {'post': post,
                'form': form,
@@ -259,7 +261,7 @@ class PostDetailView(DetailView):
             TocExtension(slugify=slugify),
         ])        
         for comment in comment_list:
-            comment.text = md.convert(comment.text)
+            comment.text = clean_html(md.convert(comment.text))
         context.update({
             'form': form,
             'comment_list': comment_list
