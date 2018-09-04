@@ -65,7 +65,7 @@
                         <time class="submit-date"
                               datetime="{{ comment.created_time }}">{{ comment.created_time }}</time>
                         <div class="text">
-                            {{ comment.text|safe|escape }}
+                            {{ comment.text|escape }}
                         </div>
                     </li>
                 {% empty %}
